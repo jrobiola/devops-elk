@@ -24,8 +24,11 @@ vagrant init
 #### 1. Mount the virtual machine using Vagrant 
 vagrant up 
 
-#### 2. Get access to the new virtual machine 
+#### 2. Get access to the new virtual machine and save your password
 ssh vagrant@127.0.0.1 -p 2222 
+
+#### 3. Generate your key and copy it into the new virtual machine
+ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@127.0.0.1 -2222 
 
 #### 3. Execute the ansible playbook 
 ansible-playbook -i inventory deploy.yml
