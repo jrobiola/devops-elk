@@ -1,0 +1,14 @@
+---
+# tasks file for kibana
+- name: kibana
+  apt: name=kibana state=latest
+
+- name: Copy kibana.yml
+  copy:
+      src: files/kibana.yml
+      dest: /etc/kibana/
+
+- name: ensure kibana
+  service: name=kibana state=started enabled=yes
+
+

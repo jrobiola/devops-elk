@@ -1,0 +1,13 @@
+---
+- name: deploy
+  hosts: ub01elk
+  become: yes
+  user: 'vagrant'
+
+
+  roles:
+    - { role: elasticsearch }
+    - { role: kibana }
+    - { role: fluentd}
+    - { role: apt-update}
+    

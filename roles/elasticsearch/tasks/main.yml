@@ -1,0 +1,40 @@
+---
+# tasks file for elasticsearch
+
+- name: default-jre
+  apt: name=default-jre state=latest
+
+- name: ensure apache2
+  apt: name=apache2 state=latest
+
+- name: ensure apt-transport-https is at the latest version
+  apt: name=apt-transport-https state=latest
+
+- name: apache modulos
+  shell: a2enmod proxy proxy_html proxy_http proxy_http2 headers
+
+- name: Copy 000-default.conf
+  copy:
+      src: files/000-default.conf
+      dest: /etc/apache2/sites-available/
+      backup: yes
+
+- name: elastic key
+  apt_key: 
+      url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+      state: present
+ 
+- name: repository
+  apt_repository:
+      repo: deb https://artifacts.elastic.co/packages/6.x/apt stable main
+      state: present
+      update_cache: yes
+    
+- name: elasticsearch
+  apt: name=elasticsearch state=latest
+
+- name: ensure elasticsearch
+  service: name=elasticsearch state=started enabled=yes
+
+- name: restart apache2
+  service: name=apache2 state=restarted

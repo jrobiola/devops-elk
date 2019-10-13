@@ -1,0 +1,4 @@
+---
+# tasks file for fluentd
+- name: fluentd repo
+  shell: curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
