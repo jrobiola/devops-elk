@@ -18,7 +18,7 @@ In case you are using a Linux Subsystem for Windows, enable the WSL settings and
 
 ### Installing
 
-##### 0. Before getting started, we must initialize Vagrant
+##### 0. Before getting started - and cloning this repository - we must initialize Vagrant
 vagrant init
 
 #### 1. Mount the virtual machine using Vagrant 
