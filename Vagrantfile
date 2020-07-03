@@ -1,8 +1,9 @@
 vagrant_version = "2"
 
+
 Vagrant.configure(vagrant_version) do |config|
 
-  config.vm.define "elas" do |elas|
+    config.vm.define "elas" do |elas|
 
      elas.vm.box = "generic/ubuntu1804"
      elas.vm.hostname= "ub01elk"
