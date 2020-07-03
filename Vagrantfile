@@ -1,6 +1,5 @@
 vagrant_version = "2"
 
-
 Vagrant.configure(vagrant_version) do |config|
 
     config.vm.define "elas" do |elas|
