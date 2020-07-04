@@ -28,6 +28,11 @@ vagrant up
 ssh vagrant@127.0.0.1 -p 2222 
 
 #### 3. Generate your key and copy it into the new virtual machine
+##### 3.1 press enter to complete the creation of the id_rsa set of files
+
+ssh-keygen -t rsa 
+
+##### 3.2 once the file is create it we can copy it onto the new VM
 ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@127.0.0.1 -p 2222 
 
 #### 4. Execute the ansible playbook 
