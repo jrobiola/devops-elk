@@ -10,9 +10,9 @@ Create a private key into the local folder, after cloning this repository using 
 
 You must first install the following applications to achieve the goals:
 
-Vagrant Hashicorp
-Ansible 
-Oracle VM Box 
+. Vagrant Hashicorp
+. Ansible 
+. Oracle VM Box 
 
 In case you are using a Linux Subsystem for Windows, enable the WSL settings and the path for the VM Box in the bashrc file 
 
