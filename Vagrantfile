@@ -10,7 +10,9 @@ Vagrant.configure(vagrant_version) do |config|
      elas.vm.network "forwarded_port", guest: 80, host: 8080
      elas.vm.network "private_network", ip: "192.168.56.103"
      elas.vm.network "public_network"
-
+     
+     elas.vm.synced_folder '.', '/home/jrob/repos/devops-elk/vagrant', disabled: true
+  
      elas.vm.provider "virtualbox" do |vb|
        vb.gui = true
        vb.name= "ub01elk"
